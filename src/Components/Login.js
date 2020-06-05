@@ -14,9 +14,9 @@ class Login extends Component {
 
   handleChange = ({ name, value }) => this.setState({ [name]: value })
   login = () => {
-    const {username, password} = this.state
-    this.props.login({username, password})
-    this.props.history.push('/movies')
+    const { username, password } = this.state
+    this.props.login({ username, password })
+    this.props.history.push("/movies")
     // const { username, password } = this.state
     // axios
     //   .post("/auth/login", { username, password })
@@ -24,9 +24,9 @@ class Login extends Component {
     //   .catch((err) => console.log(err))
   }
   register = () => {
-    const {username, password} = this.state
-      this.props.register({username, password})
-      this.props.history.push('/movies')
+    const { username, password } = this.state
+    this.props.register({ username, password })
+    this.props.history.push("/movies")
     // const { username, password } = this.state
     // axios
     //   .post("/auth/register", { username, password })
@@ -55,4 +55,10 @@ class Login extends Component {
   }
 }
 
-export default connect(null, { setUser, login, register })(Login)
+const mapDispatchToProps = {
+  setUser: setUser,
+  login: login,
+  register: register,
+}
+
+export default connect(null, mapDispatchToProps)(Login)

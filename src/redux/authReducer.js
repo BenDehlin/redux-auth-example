@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios"
 const initialState = {
   user_id: null,
   username: "",
@@ -16,7 +16,6 @@ export function setUser(payload) {
 }
 
 export function login(user) {
-  console.log(user)
   const payload = axios
     .post("/auth/login", user)
     .then((results) => results.data)
@@ -53,10 +52,10 @@ export default function authReducer(state = initialState, action) {
     case REGISTER + FULFILLED:
       return { ...payload }
     case LOGOUT + FULFILLED:
-      return { user_id: null, username: "" }
+      return {...initialState}
     case SET_USER:
       return { ...payload }
-    case GET_USER:
+    case GET_USER + FULFILLED:
       return { ...payload }
     default:
       return state
