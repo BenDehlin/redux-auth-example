@@ -11,9 +11,9 @@ const LOGOUT = "LOGOUT"
 const GET_USER = "GET_USER"
 const FULFILLED = "_FULFILLED"
 
-export function setUser(payload) {
-  return { type: SET_USER, payload }
-}
+// export function setUser(payload) {
+//   return { type: SET_USER, payload }
+// }
 
 export function login(user) {
   const payload = axios
@@ -36,13 +36,13 @@ export function logout() {
   return { type: LOGOUT }
 }
 
-export function getUser() {
-  const payload = axios
-    .get("/auth/user")
-    .then((results) => results)
-    .catch((err) => console.log(err))
-  return { type: GET_USER, payload }
-}
+// export function getUser() {
+//   const payload = axios
+//     .get("/auth/user")
+//     .then((results) => results)
+//     .catch((err) => console.log(err))
+//   return { type: GET_USER, payload }
+// }
 
 export default function authReducer(state = initialState, action) {
   const { type, payload } = action
@@ -53,10 +53,10 @@ export default function authReducer(state = initialState, action) {
       return { ...payload }
     case LOGOUT + FULFILLED:
       return {...initialState}
-    case SET_USER:
-      return { ...payload }
-    case GET_USER + FULFILLED:
-      return { ...payload }
+    // case SET_USER:
+    //   return { ...payload }
+    // case GET_USER + FULFILLED:
+    //   return { ...payload }
     default:
       return state
   }

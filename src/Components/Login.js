@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 // import axios from "axios"
 import { connect } from "react-redux"
-import { setUser, login, register } from "../redux/authReducer"
+import { login, register } from "../redux/authReducer"
 
 class Login extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = {
-  setUser: setUser,
+  // setUser: setUser,
   login: login,
   register: register,
 }
