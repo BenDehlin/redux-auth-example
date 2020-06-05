@@ -29,7 +29,7 @@ export function register(user) {
     .post("/auth/register", user)
     .then((results) => results.data)
     .catch((err) => console.log(err))
-  return { type: REGISTER, payload: user }
+  return { type: REGISTER, payload: payload }
 }
 
 export function logout() {
