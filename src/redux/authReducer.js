@@ -4,11 +4,11 @@ const initialState = {
   username: "",
 }
 
-const SET_USER = "SET_USER"
+// const SET_USER = "SET_USER"
 const LOGIN = "LOGIN"
 const REGISTER = "REGISTER"
 const LOGOUT = "LOGOUT"
-const GET_USER = "GET_USER"
+// const GET_USER = "GET_USER"
 const FULFILLED = "_FULFILLED"
 
 // export function setUser(payload) {
